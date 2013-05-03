@@ -1,0 +1,16 @@
+%% -*- mode: erlang -*-
+%% Put your dispatch rules here.
+[
+    {home,     [],	controller_template,  	[ {template, "home.tpl"} ]},
+
+    % Список новостей
+    {news,   ["news.html"],	controller_template,  	[ {template, "logon.tpl"} ]},
+
+
+    {profile, ["profile.html"],	controller_template,  	[ {template, "profile.tpl"} ]},
+    {logoff,  ["logoff.html"],	controller_template,  	[ {template, "logoff.tpl"} ]},
+    {logon,   ["logon.html"],	controller_template,  	[ {template, "logon.tpl"} ]},
+    
+    % Регистрация
+    {register_account, ["register.html"],	controller_template,  	[ {template, "register.tpl"} ]}
+].

@@ -1,0 +1,53 @@
+%% -*- mode: erlang -*-
+%% Zotonic site configuration for helentana.
+[
+ %% This site is enabled or not.
+ {enabled, true},
+
+ %% Hostname on which this site runs
+ {hostname, "helentana:8000"},
+
+ %% Aliases which should redirect to the primary hostname
+ %%{hostalias, "www.example.com"},
+ %%{hostalias, "example.com"},
+
+ %% Helentana Installer Module
+ { installer, helentana_installer },
+ 
+ %% PostgreSQL database connection
+ {dbdatabase, none},
+ {dbname, "helentanadb"},
+ {dbhost, "localhost"},
+ {dbport, 5432},
+ {dbuser, "zotonic"},
+ {dbpassword, "PzYijfZaHw"},
+ {dbschema, "dev"},
+
+ %% Depcache settings, maximum size in mbs
+ {depcache_memory_max, 100},
+
+ %% Installed modules, defined here as there is no database connection
+ {modules,
+  [helentana,
+   mod_base,
+   mod_bootstrap,
+   mod_development
+  ]},
+
+ %% Default config keys.
+ {site, [{language, "ru"}]},
+
+ %% Depcache settings. The maximum size in Mbs.
+ {depcache_memory_max, 100},
+
+ %% Password for the 'admin' user.
+ {admin_password, "admin"},
+
+ %% Key used for signing postbacks - this _must_ be a hard to guess key, otherwise your system is insecure.
+ %% Must be defined here because otherwise Zotonic will try to generate a new key and store it
+ %% in the database, which will fail since this skeleton assumes no DB access.
+ {sign_key, <<"3S8dbJnz">>},
+
+ %% What skeleton site this site is based on; for installing the initial data.
+ {skeleton, nodb}
+].
